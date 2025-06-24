@@ -1,0 +1,30 @@
+#gpt-navigator-sidebar {
+  position: fixed;
+  top: 60px;
+  right: 10px;
+  width: 250px;
+  height: 80%;
+  background-color: #1e1e1e;
+  color: white;
+  font-family: sans-serif;
+  font-size: 14px;
+  z-index: 99999;
+  box-shadow: 0 0 10px #000;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.gpt-sidebar-header {
+  background-color: #10a37f;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.gpt-sidebar-content {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
