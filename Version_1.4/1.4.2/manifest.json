@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "GPT Navigator Hello 2.0x",
+  "version": "1.0",
+  "description": "Test extension to confirm injection works",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["*://chatgpt.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["js/sidebar.js", "css/sidebar.css"],
+      "matches": ["*://chatgpt.com/*"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://chatgpt.com/*"],
+      "js": ["content.js"],
+      "css": ["css/sidebar.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
