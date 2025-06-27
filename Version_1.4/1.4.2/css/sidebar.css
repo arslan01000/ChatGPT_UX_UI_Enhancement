@@ -1,0 +1,91 @@
+/*Jun 26, 2025*/
+/* Sidebar container */
+#gpt-navigator-sidebar {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 320px; /* Slightly wider to give more content space */
+  height: calc(100vh - 32px);
+  background-color: #202123; /* ChatGPT's dark background */
+  color: #c5c5d2; /* Light gray text for contrast */
+  z-index: 9999;
+  padding: 16px;
+  overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Deeper shadow for dark mode */
+  border-radius: 12px; /* More rounded corners, like ChatGPT cards */
+  backdrop-filter: blur(0); /* Keep no blur */
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Very subtle light border */
+  font-family: system-ui, sans-serif; /* Closer to ChatGPT's font */
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out; /* Smooth transition for opening/closing */
+}
+
+/* Header section */
+#gpt-navigator-sidebar .gpt-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: #e0e0e8;
+}
+
+/* Close button */
+#gpt-navigator-sidebar #gpt-nav-close {
+  /* ... existing styles ... */
+  font-size: 20px; /* Adjusted slightly for the new icon */
+}
+
+#gpt-navigator-sidebar #gpt-nav-close:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+/* Topic list */
+#gpt-topic-list div {
+  cursor: pointer;
+  margin: 6px 0;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  color: #c5c5d2;
+}
+
+#gpt-topic-list div:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+/* Reopen button */
+#gpt-nav-reopen {
+  /* ... existing styles ... */
+  font-size: 20px; /* Adjusted for the new icon */
+  padding: 10px 14px; /* More balanced padding for the icon */
+}
+
+#gpt-nav-reopen:hover {
+  background-color: #2e2f31;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+
+#gpt-nav-reopen {
+  display: none;
+  position: fixed;
+  top: 64px;
+  right: 19px;
+  z-index: 9998;
+  background: #222;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 20px;
+  cursor: pointer;
+}
