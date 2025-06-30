@@ -1,0 +1,198 @@
+/* Container */
+#gpt-navigator-sidebar {
+  position: fixed;
+  width: 320px;
+  top: 3.8rem;
+  right: 16px;
+  bottom: 1.7rem;
+  background-color: #171717;
+  color: #c5c5d2;
+  z-index: 9999;
+  padding: 16px 12px 16px 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out;
+  backdrop-filter: blur(0);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+
+/* Header */
+.gpt-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: #e0e0e8;
+}
+
+/* Scroll wrapper for topic list */
+.gpt-topic-scroll {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding-right: 4px;
+  max-height: 100%;
+}
+
+/* Scrollbar styling */
+.gpt-topic-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.gpt-topic-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 12px;
+}
+.gpt-topic-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  transition: background-color 0.2s ease-in-out;
+}
+.gpt-topic-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Topic list items */
+#gpt-topic-list {
+  display: flex;
+  flex-direction: column;
+}
+
+#gpt-topic-list div {
+  cursor: pointer;
+  margin: 6px 0;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  /* transition: background-color 0.2s ease; */
+  color: #c5c5d2;
+}
+
+#gpt-topic-list div:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+.gpt-toc-anchor > div {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+
+/* Icons */
+.gpt-toc-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+/* Close button */
+.gpt-icon-button {
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  color: inherit;
+}
+.gpt-icon-button:hover {
+  background-color: #2e2f31;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+
+/* Reopen button */
+#gpt-nav-reopen {
+  font-size: 20px;
+  padding: 10px 14px;
+  display: none;
+  position: fixed;
+  top: 64px;
+  right: 19px;
+  z-index: 9998;
+  background: #222;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#gpt-nav-reopen:hover {
+  background-color: #2e2f31;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+#gpt-nav-reopen svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Fancy Loading */
+
+.gpt-loading-spinner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #aaa;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.gpt-loading-spinner::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.gpt-topic-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.6); /* brighter effect on hover */
+}
+
+
+.gpt-toc-anchor:hover .gpt-toc-icon {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.gpt-toc-icon {
+  pointer-events: none;
+}
+
+.gpt-icon-button {
+  border-radius: 6px; /*меньше скругление*/
+  padding: 4px;       /*меньше отступ вокруг иконки */
+}
+
+
+.gpt-icon-button svg {
+  width: 20px;
+  height: 20px;
+}
